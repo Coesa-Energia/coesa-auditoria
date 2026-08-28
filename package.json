@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "hooks:install": "bash scripts/install-hooks.sh",
+    "test:preflight-parity": "bash scripts/test-preflight-parity.sh",
+    "preflight": "bash scripts/preflight.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
