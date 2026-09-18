@@ -1,8 +1,8 @@
 "use client";
 
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { ChevronDown, ClipboardList } from "lucide-react";
 import { motion } from "framer-motion";
-import { WHATSAPP_URL } from "@/lib/utils";
+import { AUDIT_FORM_ANCHOR } from "@/lib/utils";
 
 export function Hero() {
   const scrollDown = () => {
@@ -56,12 +56,10 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={AUDIT_FORM_ANCHOR}
               className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-lg px-8 py-4 rounded-sm shadow-lg hover:shadow-xl transition-all min-w-[280px]"
             >
-              <MessageCircle className="w-6 h-6" />
+              <ClipboardList className="w-6 h-6" />
               Auditar minha fatura grátis
             </a>
           </motion.div>

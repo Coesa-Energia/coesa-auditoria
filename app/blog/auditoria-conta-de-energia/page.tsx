@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BlogCta } from "@/components/blog-cta";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 export const metadata: Metadata = {
   title: "Auditoria de Conta de Energia: guia completo para identificar cobranças indevidas | COESA",
@@ -63,7 +62,7 @@ const faqSchema = {
       name: "Como identificar cobranças indevidas na conta de energia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Para identificar cobranças indevidas na conta de energia, verifique: (1) se a bandeira tarifária cobrada corresponde à bandeira oficial ANEEL do período; (2) se a alíquota de ICMS está correta para sua classe de consumidor e estado; (3) se a leitura é medida ou estimada — leituras estimadas podem cobrar consumo maior do que o real; (4) se créditos de energia solar aparecem na fatura caso você tenha geração distribuída; (5) se a taxa de iluminação pública (CIP) corresponde ao valor regulado pelo seu município. Para uma verificação completa dos 17 pontos auditáveis, solicite uma auditoria gratuita pelo WhatsApp.",
+        text: "Para identificar cobranças indevidas na conta de energia, verifique: (1) se a bandeira tarifária cobrada corresponde à bandeira oficial ANEEL do período; (2) se a alíquota de ICMS está correta para sua classe de consumidor e estado; (3) se a leitura é medida ou estimada — leituras estimadas podem cobrar consumo maior do que o real; (4) se créditos de energia solar aparecem na fatura caso você tenha geração distribuída; (5) se a taxa de iluminação pública (CIP) corresponde ao valor regulado pelo seu município. Para uma verificação completa dos 17 pontos auditáveis, solicite uma auditoria gratuita pelo formulário online.",
       },
     },
     {
@@ -105,8 +104,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      name: "Solicite a auditoria gratuita pelo WhatsApp",
-      text: "Entre em contato com um consultor COESA pelo WhatsApp. Informe o valor médio da sua conta e o nome da distribuidora. O consultor analisa sua situação com 17 verificações e retorna com o resultado em até 24 horas úteis.",
+      name: "Preencha o formulário de auditoria gratuita",
+      text: "Preencha o formulário com o valor médio da sua conta e o nome da distribuidora. Um consultor COESA analisa sua situação com 17 verificações e retorna com o resultado em até 24 horas úteis.",
     },
     {
       "@type": "HowToStep",
@@ -115,7 +114,7 @@ const howToSchema = {
     },
   ],
   tool: [
-    { "@type": "HowToTool", name: "WhatsApp" },
+    { "@type": "HowToTool", name: "Formulário de auditoria online" },
     { "@type": "HowToTool", name: "Fatura de energia elétrica (opcional)" },
   ],
 };
@@ -403,7 +402,7 @@ export default function AuditoriaGuiaPage() {
             <p>
               <strong className="text-white">Quanto tempo leva para ter o resultado?</strong><br />
               O consultor retorna com o resultado da análise em até 24 horas úteis após o
-              contato inicial pelo WhatsApp.
+              envio do formulário.
             </p>
             <p>
               <strong className="text-white">É necessário enviar a fatura?</strong><br />
@@ -431,7 +430,6 @@ export default function AuditoriaGuiaPage() {
         </article>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }

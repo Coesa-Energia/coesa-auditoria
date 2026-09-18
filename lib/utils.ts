@@ -24,5 +24,12 @@ export function parseCurrencyToNumber(value: string): number {
   return parseFloat(cleaned) || 0;
 }
 
-export const WHATSAPP_URL =
-  "https://wa.me/5531936180209?text=Ol%C3%A1%2C%20quero%20uma%20auditoria%20gratuita%20na%20minha%20conta%20de%20luz.";
+// Todo CTA anterior ao lead aponta para o formulário da página inicial — o
+// lead preenche o formulário antes de qualquer contato.
+export const AUDIT_FORM_ANCHOR = "/#auditoria";
+
+// WhatsApp só depois do formulário enviado: usado apenas nas páginas de
+// agradecimento (/obrigado e /muito-obrigado). O nome é propositalmente
+// explícito para que nenhum CTA de topo de funil volte a apontar para cá.
+export const WHATSAPP_POS_LEAD_URL =
+  "https://wa.me/5531936185192?text=Ol%C3%A1%2C%20acabei%20de%20solicitar%20a%20auditoria%20gratuita%20da%20minha%20conta%20de%20luz.";

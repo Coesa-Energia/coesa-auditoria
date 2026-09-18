@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { distribuidoras } from "@/lib/distribuidoras";
 
 export const metadata: Metadata = {
@@ -91,7 +90,6 @@ export default function DistribuidorasPage() {
         </div>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }

@@ -12,7 +12,6 @@ import { SolarCallout } from "@/components/solar-callout";
 import { SocialProof } from "@/components/social-proof";
 import { FAQ } from "@/components/faq";
 import { Footer } from "@/components/footer";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 export const metadata: Metadata = {
   alternates: {
@@ -37,7 +36,6 @@ export default function Home() {
       <SocialProof />
       <FAQ />
       <Footer />
-      <WhatsAppFloat />
     </main>
   );
 }

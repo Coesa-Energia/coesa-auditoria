@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BlogCta } from "@/components/blog-cta";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 export const metadata: Metadata = {
   title: "Energia Solar por Assinatura: como funciona e quanto você economiza | COESA",
@@ -192,7 +191,6 @@ export default function EnergiaAssinaturaPage() {
         </article>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }

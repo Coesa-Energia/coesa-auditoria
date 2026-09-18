@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BlogCta } from "@/components/blog-cta";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 export const metadata: Metadata = {
   title: "Enquadramento Tarifário: como saber se sua empresa está na classe correta | COESA",
@@ -210,7 +209,6 @@ export default function EnquadramentoPage() {
         </article>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }

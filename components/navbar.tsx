@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, ClipboardList } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { WHATSAPP_URL } from "@/lib/utils";
+import { AUDIT_FORM_ANCHOR } from "@/lib/utils";
 
 const navLinks = [
   { href: "#como-funciona", label: "Como Funciona" },
@@ -57,12 +57,10 @@ export function Navbar() {
 
             <div className="hidden lg:block">
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={AUDIT_FORM_ANCHOR}
                 className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-sm px-5 py-2.5 rounded-sm transition-colors"
               >
-                <MessageCircle className="w-4 h-4" />
+                <ClipboardList className="w-4 h-4" />
                 Auditar Fatura
               </a>
             </div>
@@ -98,13 +96,11 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={AUDIT_FORM_ANCHOR}
                 className="mt-4 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-lg py-4 px-6 rounded-sm transition-colors w-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <MessageCircle className="w-5 h-5" />
+                <ClipboardList className="w-5 h-5" />
                 Auditar Fatura Grátis
               </a>
             </div>

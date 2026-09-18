@@ -16,7 +16,7 @@ export function Footer() {
               className="h-7 w-auto mb-4"
             />
             <p className="text-sm text-white/40 leading-relaxed max-w-xs">
-              Auditoria gratuita de conta de energia pelo WhatsApp. Identificamos
+              Auditoria gratuita de conta de energia. Identificamos
               cobranças indevidas em faturas de luz em todo o Brasil.
             </p>
             <p className="text-xs text-white/25 mt-4">CNPJ: 54.016.051/0001-75</p>

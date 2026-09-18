@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 export const metadata: Metadata = {
   title: "Blog — Economia de Energia Elétrica | COESA",
@@ -131,7 +130,6 @@ export default function BlogPage() {
         </div>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }

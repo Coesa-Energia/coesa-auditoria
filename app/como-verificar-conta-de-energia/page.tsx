@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/utils";
+import { ClipboardList } from "lucide-react";
+import { AUDIT_FORM_ANCHOR } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Como Verificar a Conta de Energia Elétrica — Guia Completo | COESA",
@@ -201,7 +201,7 @@ export default function ComoVerificarContaDeEnergia() {
               A COESA Energia oferece uma auditoria gratuita que analisa 17 pontos críticos da sua fatura — incluindo todos os itens mencionados neste guia e mais: iluminação pública (CIP/COSIP), horário de ponta, fator de potência, modalidade tarifária, cobranças duplicadas e histórico de consumo.
             </p>
             <p>
-              O processo é simples: você envia o valor médio da sua conta de energia e o nome da distribuidora pelo WhatsApp. Um consultor especializado retorna com o resultado detalhado em até 24 horas úteis — sem custo, sem cadastro, sem compromisso.
+              O processo é simples: você preenche o formulário com o valor médio da sua conta de energia e o nome da distribuidora. Um consultor especializado retorna com o resultado detalhado em até 24 horas úteis — sem custo e sem compromisso.
             </p>
           </section>
 
@@ -219,12 +219,10 @@ export default function ComoVerificarContaDeEnergia() {
             Auditoria gratuita de conta de energia. Um consultor COESA analisa 17 pontos da sua fatura em até 24h.
           </p>
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={AUDIT_FORM_ANCHOR}
             className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold px-6 py-3 rounded-sm transition-colors"
           >
-            <MessageCircle className="w-5 h-5" />
+            <ClipboardList className="w-5 h-5" />
             Solicitar auditoria gratuita
           </a>
         </div>

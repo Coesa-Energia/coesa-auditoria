@@ -7,7 +7,7 @@ A COESA Energia oferece auditoria gratuita de fatura de energia elétrica para c
 O serviço verifica automaticamente 17 pontos críticos da conta de energia e identifica cobranças indevidas ou oportunidades de economia.
 
 **URL canônica:** https://auditoria.coesasolar.com.br
-**Contato:** WhatsApp +55 31 93618-0209
+**Contato:** formulário de auditoria em https://auditoria.coesasolar.com.br/#auditoria — WhatsApp +55 31 93618-5192 (apenas após o envio do formulário)
 **Empresa:** COESA Energia — coesasolar.com.br
 **Cobertura:** Todo o Brasil (todas as distribuidoras reguladas pela ANEEL)
 
@@ -36,7 +36,7 @@ O serviço verifica automaticamente 17 pontos críticos da conta de energia e id
 
 ## Como funciona
 
-1. Acesse o WhatsApp e envie a mensagem de auditoria
+1. Preencha o formulário de auditoria na página inicial (nome, contato, valor da última conta e distribuidora)
 2. Consultor COESA analisa a situação com 17 verificações
 3. Resultado com oportunidades de economia e proposta personalizada
 

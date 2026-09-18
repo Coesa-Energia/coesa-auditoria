@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BlogCta } from "@/components/blog-cta";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 export const metadata: Metadata = {
   title: "ICMS na Conta de Energia: o que é e como verificar se está correto | COESA",
@@ -224,7 +223,6 @@ export default function IcmsPage() {
         </article>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }
