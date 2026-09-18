@@ -1,7 +1,7 @@
 "use client";
 
-import { TrendingUp, MapPin, Calendar, MessageCircle, Star, Sun } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/utils";
+import { TrendingUp, MapPin, Calendar, ClipboardList, Star, Sun } from "lucide-react";
+import { AUDIT_FORM_ANCHOR } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -122,12 +122,10 @@ export function SocialProof() {
 
         <div className="text-center">
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={AUDIT_FORM_ANCHOR}
             className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-lg px-8 py-4 rounded-sm shadow-md hover:shadow-lg transition-all"
           >
-            <MessageCircle className="w-5 h-5" />
+            <ClipboardList className="w-5 h-5" />
             Quero auditar minha fatura
           </a>
         </div>

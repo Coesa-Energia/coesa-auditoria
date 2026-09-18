@@ -19,7 +19,7 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Auditoria Gratuita de Conta de Luz — Identificamos Cobranças Indevidas | COESA",
   description:
-    "Solicite sua auditoria gratuita de conta de energia pelo WhatsApp. Um consultor COESA analisa 17 pontos da sua fatura e identifica cobranças indevidas.",
+    "Solicite sua auditoria gratuita de conta de energia pelo formulário online. Um consultor COESA analisa 17 pontos da sua fatura e identifica cobranças indevidas.",
   metadataBase: new URL("https://auditoria.coesasolar.com.br"),
   alternates: {
     canonical: "https://auditoria.coesasolar.com.br",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sua conta de energia pode estar errada",
     description:
-      "Auditoria gratuita de conta de energia pelo WhatsApp. Um consultor COESA analisa 17 pontos da sua fatura e identifica cobranças indevidas.",
+      "Auditoria gratuita de conta de energia. Um consultor COESA analisa 17 pontos da sua fatura e identifica cobranças indevidas.",
     type: "website",
     locale: "pt_BR",
     url: "https://auditoria.coesasolar.com.br",
@@ -55,9 +55,9 @@ const localBusinessSchema = {
   "@id": "https://auditoria.coesasolar.com.br/#localbusiness",
   name: "COESA Energia — Auditoria de Conta de Luz",
   description:
-    "Auditoria gratuita de conta de energia elétrica pelo WhatsApp. Identificamos cobranças indevidas em faturas de luz em todo o Brasil.",
+    "Auditoria gratuita de conta de energia elétrica. Identificamos cobranças indevidas em faturas de luz em todo o Brasil.",
   url: "https://auditoria.coesasolar.com.br",
-  telephone: "+55-31-93618-0209",
+  telephone: "+55-31-93618-5192",
   email: "contato@coesasolar.com.br",
   address: {
     "@type": "PostalAddress",
@@ -90,7 +90,7 @@ const organizationSchema = {
   sameAs: ["https://coesasolar.com.br"],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+55-31-93618-0209",
+    telephone: "+55-31-93618-5192",
     contactType: "customer service",
     areaServed: "BR",
     availableLanguage: "Portuguese",
@@ -175,7 +175,7 @@ const faqSchema = {
       name: "O que acontece após a auditoria?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Após o envio das suas informações pelo WhatsApp, um consultor COESA inicia a análise da sua fatura de energia. Em menos de 24 horas úteis, você recebe o resultado detalhado. Se identificarmos oportunidades de economia — como enquadramento tarifário inadequado, cobranças duplicadas ou ICMS calculado incorretamente — o consultor apresenta uma proposta personalizada, sem custo e sem compromisso. Você analisa com calma e decide se quer prosseguir, sem pressão de tempo. Caso a auditoria não encontre nenhuma irregularidade ou oportunidade relevante, informamos diretamente e encerramos o atendimento.",
+        text: "Após o envio do formulário, um consultor COESA inicia a análise da sua fatura de energia. Em menos de 24 horas úteis, você recebe o resultado detalhado. Se identificarmos oportunidades de economia — como enquadramento tarifário inadequado, cobranças duplicadas ou ICMS calculado incorretamente — o consultor apresenta uma proposta personalizada, sem custo e sem compromisso. Você analisa com calma e decide se quer prosseguir, sem pressão de tempo. Caso a auditoria não encontre nenhuma irregularidade ou oportunidade relevante, informamos diretamente e encerramos o atendimento.",
       },
     },
     {
@@ -183,7 +183,7 @@ const faqSchema = {
       name: "Preciso enviar minha fatura?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Não é necessário enviar a fatura de energia para a auditoria inicial. Para a primeira análise, basta informar ao consultor pelo WhatsApp o valor médio da sua conta de energia elétrica e o nome da distribuidora — por exemplo, CEMIG, Enel ou CPFL. Com essas duas informações já conseguimos identificar os principais pontos de atenção e estimar o potencial de economia. Em alguns casos, quando identificamos oportunidades específicas que exigem análise mais detalhada, o consultor pode solicitar uma foto ou PDF da fatura. Nesse caso, o envio é simples e feito diretamente no WhatsApp. Todo o processo é conduzido por um especialista humano.",
+        text: "Não é necessário enviar a fatura de energia para a auditoria inicial. Para a primeira análise, basta informar no formulário o valor médio da sua conta de energia elétrica e o nome da distribuidora — por exemplo, CEMIG, Enel ou CPFL. Com essas duas informações já conseguimos identificar os principais pontos de atenção e estimar o potencial de economia. Em alguns casos, quando identificamos oportunidades específicas que exigem análise mais detalhada, o consultor pode solicitar uma foto ou PDF da fatura. Nesse caso, o consultor combina o envio com você no retorno. Todo o processo é conduzido por um especialista humano.",
       },
     },
     {
@@ -199,7 +199,7 @@ const faqSchema = {
       name: "Quanto tempo leva para ter o resultado?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O processo é rápido e conduzido de forma humanizada pelo WhatsApp. Após enviar suas informações — basicamente o valor médio da conta de energia e o nome da distribuidora — um consultor COESA retorna com o resultado da análise em até 24 horas úteis. Durante o atendimento, o consultor explica passo a passo o que foi encontrado: quais pontos da fatura foram verificados, se há cobranças em desacordo com a legislação vigente da ANEEL e qual é o potencial de economia estimado. Nosso horário de atendimento é de segunda a sexta, das 8h às 18h (horário de Brasília).",
+        text: "O processo é rápido e conduzido de forma humanizada. Após enviar o formulário com suas informações — basicamente o valor médio da conta de energia e o nome da distribuidora — um consultor COESA retorna com o resultado da análise em até 24 horas úteis. Durante o atendimento, o consultor explica passo a passo o que foi encontrado: quais pontos da fatura foram verificados, se há cobranças em desacordo com a legislação vigente da ANEEL e qual é o potencial de economia estimado. Nosso horário de atendimento é de segunda a sexta, das 8h às 18h (horário de Brasília).",
       },
     },
   ],
@@ -211,17 +211,17 @@ const howToSchema = {
   "@id": "https://auditoria.coesasolar.com.br/#howto",
   name: "Como solicitar uma auditoria gratuita de conta de energia",
   description:
-    "Passo a passo para solicitar a auditoria gratuita de conta de energia da COESA pelo WhatsApp e identificar cobranças indevidas na fatura de luz.",
+    "Passo a passo para solicitar a auditoria gratuita de conta de energia da COESA pelo formulário online e identificar cobranças indevidas na fatura de luz.",
   tool: [
-    { "@type": "HowToTool", name: "WhatsApp" },
+    { "@type": "HowToTool", name: "Formulário de auditoria online" },
     { "@type": "HowToTool", name: "Fatura de energia elétrica (opcional)" },
   ],
   step: [
     {
       "@type": "HowToStep",
       position: 1,
-      name: "Clique no botão do WhatsApp",
-      text: "Acesse o WhatsApp e envie a mensagem com um clique. Sem cadastro, sem formulários.",
+      name: "Preencha o formulário de auditoria",
+      text: "Informe nome, contato, valor da última conta e a distribuidora. Leva menos de um minuto.",
       url: "https://auditoria.coesasolar.com.br/#como-funciona",
     },
     {
@@ -249,6 +249,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <head>
+        {/* Formulário embutido (aios.dev.br) */}
+        <link rel="preconnect" href="https://aios.dev.br" />
         {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"

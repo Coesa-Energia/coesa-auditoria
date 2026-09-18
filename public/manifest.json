@@ -1,7 +1,7 @@
 {
   "name": "COESA Auditoria Gratuita",
   "short_name": "COESA Auditoria",
-  "description": "Auditoria gratuita de conta de energia pelo WhatsApp. Um consultor COESA analisa sua fatura e identifica cobranças indevidas.",
+  "description": "Auditoria gratuita de conta de energia. Um consultor COESA analisa sua fatura e identifica cobranças indevidas.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",

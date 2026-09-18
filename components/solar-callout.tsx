@@ -1,7 +1,7 @@
 "use client";
 
-import { Sun, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/utils";
+import { Sun, ClipboardList } from "lucide-react";
+import { AUDIT_FORM_ANCHOR } from "@/lib/utils";
 
 export function SolarCallout() {
   return (
@@ -37,12 +37,10 @@ export function SolarCallout() {
                 o cliente soubesse.
               </p>
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={AUDIT_FORM_ANCHOR}
                 className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 font-semibold px-6 py-3 rounded-sm transition-colors text-sm"
               >
-                <MessageCircle className="w-4 h-4" />
+                <ClipboardList className="w-4 h-4" />
                 Verificar se meus créditos solares estão corretos
               </a>
             </div>

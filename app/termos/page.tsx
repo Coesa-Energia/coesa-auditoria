@@ -96,7 +96,7 @@ export default function Termos() {
               8. Contato
             </h2>
             <p>
-              Dúvidas sobre estes Termos de Uso: WhatsApp <strong>+55 (31) 93618-0209</strong>.
+              Dúvidas sobre estes Termos de Uso: WhatsApp <strong>+55 (31) 93618-5192</strong>.
             </p>
           </section>
 

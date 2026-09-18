@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BlogCta } from "@/components/blog-cta";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 export const metadata: Metadata = {
   title: "Cobranças Indevidas na Conta de Energia: como identificar e contestar | COESA",
@@ -205,7 +204,6 @@ export default function CobrancasPage() {
         </article>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }

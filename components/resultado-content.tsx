@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, MessageCircle } from "lucide-react";
+import { CheckCircle2, ClipboardList } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatCurrency, WHATSAPP_URL } from "@/lib/utils";
+import { formatCurrency, AUDIT_FORM_ANCHOR } from "@/lib/utils";
 
 const verificacoes = [
   "Verificando tarifa aplicada...",
@@ -152,15 +152,15 @@ export function ResultadoContent() {
                 transition={{ delay: 0.6 }}
                 className="space-y-4"
               >
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <a href={AUDIT_FORM_ANCHOR}>
                   <Button variant="landing" size="xl" className="w-full sm:w-auto min-w-[300px]">
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Falar com consultor COESA
+                    <ClipboardList className="w-5 h-5 mr-2" />
+                    Solicitar auditoria gratuita
                   </Button>
                 </a>
 
                 <p className="text-sm text-white/40">
-                  Um consultor entrará em contato pelo WhatsApp
+                  Preencha o formulário e um consultor retorna em até 24h úteis
                 </p>
               </motion.div>
             </motion.div>

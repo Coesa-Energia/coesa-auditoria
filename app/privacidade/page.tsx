@@ -43,7 +43,7 @@ export default function Privacidade() {
             <ul className="list-disc pl-6 mt-2 space-y-1">
               <li>Valor médio da conta de energia elétrica</li>
               <li>Nome da distribuidora (ex.: CEMIG, Enel, CPFL)</li>
-              <li>Nome completo e número de WhatsApp (para retorno do consultor)</li>
+              <li>Nome completo, telefone/WhatsApp e e-mail informados no formulário (para retorno do consultor)</li>
               <li>Dados da fatura de energia (somente quando solicitado para análise detalhada)</li>
             </ul>
             <p className="mt-3">Não coletamos dados sensíveis como CPF, RG, dados bancários ou informações de pagamento nesta plataforma.</p>
@@ -107,7 +107,7 @@ export default function Privacidade() {
               8. Contato
             </h2>
             <p>
-              Para exercer seus direitos ou esclarecer dúvidas sobre esta Política de Privacidade, entre em contato pelo WhatsApp: <strong>+55 (31) 93618-0209</strong>.
+              Para exercer seus direitos ou esclarecer dúvidas sobre esta Política de Privacidade, entre em contato pelo WhatsApp: <strong>+55 (31) 93618-5192</strong>.
             </p>
           </section>
 

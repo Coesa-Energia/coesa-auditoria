@@ -1,5 +1,5 @@
-import { MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/utils";
+import { ClipboardList } from "lucide-react";
+import { AUDIT_FORM_ANCHOR } from "@/lib/utils";
 
 export function BlogCta() {
   return (
@@ -18,12 +18,10 @@ export function BlogCta() {
         gratuitamente. Sem cadastro, sem compromisso.
       </p>
       <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={AUDIT_FORM_ANCHOR}
         className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-lg rounded-sm transition-colors"
       >
-        <MessageCircle className="w-5 h-5" />
+        <ClipboardList className="w-5 h-5" />
         Solicitar auditoria gratuita
       </a>
       <p className="text-xs text-white/30 mt-4">

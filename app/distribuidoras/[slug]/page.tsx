@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BlogCta } from "@/components/blog-cta";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { distribuidoras, getDistribuidora } from "@/lib/distribuidoras";
 
 interface Props {
@@ -18,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dist = getDistribuidora(params.slug);
   if (!dist) return {};
 
-  const title = `Auditoria de Conta de Energia ${dist.shortName} — Gratuita e pelo WhatsApp | COESA`;
-  const description = `Cliente ${dist.shortName}? Solicite uma auditoria gratuita de conta de energia pelo WhatsApp. Um consultor COESA verifica 17 pontos da sua fatura ${dist.shortName} e identifica cobranças indevidas.`;
+  const title = `Auditoria de Conta de Energia ${dist.shortName} — Gratuita e Online | COESA`;
+  const description = `Cliente ${dist.shortName}? Solicite uma auditoria gratuita de conta de energia pelo formulário online. Um consultor COESA verifica 17 pontos da sua fatura ${dist.shortName} e identifica cobranças indevidas.`;
 
   return {
     title,
@@ -181,7 +180,7 @@ export default function DistribuidoraPage({ params }: Props) {
                 Como solicitar a auditoria de conta {dist.shortName}
               </h2>
               <p>
-                O processo é simples e totalmente pelo WhatsApp. Você não
+                O processo é simples e totalmente online. Você não
                 precisa enviar nenhum documento — basta informar o valor médio
                 da sua conta de energia e que você é cliente da {dist.shortName}.
                 Um consultor COESA inicia a análise e retorna com o resultado em
@@ -211,7 +210,6 @@ export default function DistribuidoraPage({ params }: Props) {
         </div>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   );
 }
