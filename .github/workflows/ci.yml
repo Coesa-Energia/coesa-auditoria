@@ -23,4 +23,4 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: npm run preflight
+      - run: npm run preflight:ci # sem build: Vercel Preview já compila
