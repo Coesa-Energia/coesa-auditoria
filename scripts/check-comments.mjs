@@ -51,12 +51,19 @@ for (const file of files) {
       }
     }
   } else {
-    const initialOnly = file === ".gitignore" || extension === "example";
+    const initialOnly = file === ".gitignore";
     const yaml = extension === "yml" || extension === "yaml";
+    const shell = extension === "sh" || file === ".githooks/pre-push";
     let quote = "";
     let blockIndent = -1;
+    let heredoc = "";
     let offset = 0;
     for (const line of source.split("\n")) {
+      if (heredoc) {
+        if (line.trim() === heredoc) heredoc = "";
+        offset += line.length + 1;
+        continue;
+      }
       const indent = line.length - line.trimStart().length;
       if (yaml && blockIndent >= 0 && (line.trim() === "" || indent > blockIndent)) {
         offset += line.length + 1;
@@ -68,7 +75,13 @@ for (const file of files) {
         if (quote) {
           if (char === "\\" && !yaml) index++;
           else if (char === quote) quote = "";
-        } else if (char === "'" || char === '"') {
+        } else if (shell && char === "<" && line[index + 1] === "<") {
+          const marker = line.slice(index).match(/^<<-?(['"]?)([A-Za-z_][A-Za-z_0-9]*)\1/);
+          if (marker) heredoc = marker[2];
+        } else if ((char === "'" || char === '"') && (
+          shell || (yaml && /[:\[,-]\s*$/.test(line.slice(0, index))) ||
+          (extension === "example" && /=\s*$/.test(line.slice(0, index)))
+        )) {
           quote = char;
         } else if (char === "#" && (index === 0 || /\s/.test(line[index - 1]))) {
           if (!(offset === 0 && line.startsWith("#!")) && (!initialOnly || line.slice(0, index).trim() === "")) {
