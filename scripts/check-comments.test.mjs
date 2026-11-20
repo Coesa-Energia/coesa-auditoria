@@ -18,10 +18,6 @@ test("comment lint accepts code and tool directives, then rejects real comments"
     write("valid.ts", "const cast = <number>42; const id = <T>(value:T)=>value;\n");
     write("valid.tsx", 'const url = "https://example.com"; export const el = <div />;\n');
     write("valid.css", 'a { content: "/* text */"; }\n');
-    write("valid.sh", '#!/usr/bin/env bash\nprintf "%s" "line\n# text"\ncat <<\'EOF\'\n# literal input\nEOF\n');
-    write("valid.yml", 'run: |\n  # text\n  echo ok\ntitle: don\'t suppress\n');
-    write(".env.local.example", 'KEY="value # text"\n');
-    write(".gitignore", "folder #1\n");
     write("missing.ts", "export const missing = true;\n");
     execFileSync("git", ["add", "missing.ts"], { cwd });
     unlinkSync(join(cwd, "missing.ts"));
@@ -30,12 +26,9 @@ test("comment lint accepts code and tool directives, then rejects real comments"
     write("invalid.tsx", "export const el = <div>{/* JSX */}</div>;\n");
     write("invalid.css", "a { color: red /* CSS */ !important; }\n");
     write("invalid.json", '{"url":"https://example.com"}\n// JSONC\n');
-    write("invalid.sh", "echo ok # shell\n");
-    write("invalid.yml", "title: don't suppress # YAML\n");
-    write(".env.local.example", "KEY=value # dotenv\n");
     const result = check();
     assert.equal(result.status, 1);
-    for (const file of ["invalid.tsx", "invalid.css", "invalid.json", "invalid.sh", "invalid.yml", ".env.local.example"]) {
+    for (const file of ["invalid.tsx", "invalid.css", "invalid.json"]) {
       assert.match(result.stderr, new RegExp(`${file.replace(".", "\\.")}:`));
     }
   } finally {

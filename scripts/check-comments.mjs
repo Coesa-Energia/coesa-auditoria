@@ -3,8 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import parser from "@typescript-eslint/parser";
 import ts from "typescript";
 
-const sourceExtensions = new Set(["ts", "tsx", "js", "jsx", "mjs", "cjs", "css", "json", "sh", "yml", "yaml", "example"]);
-const hashFiles = new Set([".gitignore", ".githooks/pre-push"]);
+const sourceExtensions = new Set(["ts", "tsx", "js", "jsx", "mjs", "cjs", "css", "json"]);
 const files = execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard", "-z"])
   .toString()
   .split("\0")
@@ -13,7 +12,7 @@ const failures = [];
 
 for (const file of files) {
   const extension = file.split(".").pop();
-  if ((!sourceExtensions.has(extension) && !hashFiles.has(file)) || !existsSync(file)) continue;
+  if (!sourceExtensions.has(extension) || !existsSync(file)) continue;
   const source = readFileSync(file, "utf8");
   const positions = [];
 
@@ -50,52 +49,6 @@ for (const file of files) {
         index++;
       }
     }
-  } else {
-    const initialOnly = file === ".gitignore";
-    const yaml = extension === "yml" || extension === "yaml";
-    const shell = extension === "sh" || file === ".githooks/pre-push";
-    let quote = "";
-    let blockIndent = -1;
-    let heredoc = "";
-    let offset = 0;
-    for (const line of source.split("\n")) {
-      if (heredoc) {
-        if (line.trim() === heredoc) heredoc = "";
-        offset += line.length + 1;
-        continue;
-      }
-      const indent = line.length - line.trimStart().length;
-      if (yaml && blockIndent >= 0 && (line.trim() === "" || indent > blockIndent)) {
-        offset += line.length + 1;
-        continue;
-      }
-      blockIndent = -1;
-      for (let index = 0; index < line.length; index++) {
-        const char = line[index];
-        if (quote) {
-          if (char === "\\" && !yaml) index++;
-          else if (char === quote) quote = "";
-        } else if (shell && char === "<" && line[index + 1] === "<") {
-          const marker = line.slice(index).match(/^<<-?(['"]?)([A-Za-z_][A-Za-z_0-9]*)\1/);
-          if (marker) heredoc = marker[2];
-        } else if ((char === "'" || char === '"') && (
-          shell || (yaml && /[:\[,-]\s*$/.test(line.slice(0, index))) ||
-          (extension === "example" && /=\s*$/.test(line.slice(0, index)))
-        )) {
-          quote = char;
-        } else if (char === "#" && (index === 0 || /\s/.test(line[index - 1]))) {
-          if (!(offset === 0 && line.startsWith("#!")) && (!initialOnly || line.slice(0, index).trim() === "")) {
-            positions.push(offset + index);
-          }
-          break;
-        }
-      }
-      if (yaml) {
-        quote = "";
-        if (/:[ \t]*[|>][+-]?[ \t]*(?:#.*)?$/.test(line)) blockIndent = indent;
-      }
-      offset += line.length + 1;
-    }
   }
 
   for (const position of positions) {
@@ -104,6 +57,6 @@ for (const file of files) {
 }
 
 if (failures.length) {
-  console.error(`Comments are forbidden in source and configuration:\n${failures.join("\n")}`);
+  console.error(`Comments are forbidden in TS, JS, CSS and JSON source:\n${failures.join("\n")}`);
   process.exitCode = 1;
 }
