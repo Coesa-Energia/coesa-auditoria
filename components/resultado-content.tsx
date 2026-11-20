@@ -62,7 +62,6 @@ export function ResultadoContent() {
                 Analisando sua fatura...
               </h2>
 
-              {/* Progress bar */}
               <div className="w-full bg-white/10 rounded-full h-2 mb-8">
                 <motion.div
                   className="bg-green-400 h-2 rounded-full"
@@ -72,7 +71,6 @@ export function ResultadoContent() {
                 />
               </div>
 
-              {/* Current step */}
               <div className="space-y-2 text-left max-w-sm mx-auto">
                 {verificacoes.slice(0, currentStep + 1).map((step, i) => (
                   <motion.div
@@ -101,7 +99,6 @@ export function ResultadoContent() {
               transition={{ duration: 0.6 }}
               className="text-center text-white"
             >
-              {/* Success icon */}
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -124,7 +121,6 @@ export function ResultadoContent() {
                 sua conta de energia.
               </p>
 
-              {/* Economia card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -145,7 +141,6 @@ export function ResultadoContent() {
                 </p>
               </motion.div>
 
-              {/* CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

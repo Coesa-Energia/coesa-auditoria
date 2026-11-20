@@ -4,9 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-[#0a0a0a] text-white py-16">
       <div className="container mx-auto px-4">
-        {/* 3-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
-          {/* Column 1 — Brand */}
           <div>
             <Image
               src="/images/logo-coesa-white.png"
@@ -22,7 +20,6 @@ export function Footer() {
             <p className="text-xs text-white/25 mt-4">CNPJ: 54.016.051/0001-75</p>
           </div>
 
-          {/* Column 2 — Auditoria */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
               Auditoria
@@ -51,7 +48,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 — Recursos */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
               Recursos
@@ -89,7 +85,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Authority bar */}
         <div className="border-t border-white/10 pt-6 mb-6">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-white/30">
             <span>Auditoria baseada na Resolução Normativa ANEEL nº 1.000/2021</span>
@@ -107,7 +102,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
             &copy; {new Date().getFullYear()} COESA Energia — CNPJ 54.016.051/0001-75. Todos os direitos reservados.

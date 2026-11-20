@@ -21,7 +21,6 @@ export default async function Image() {
           position: "relative",
         }}
       >
-        {/* Top green accent bar */}
         <div
           style={{
             position: "absolute",
@@ -34,7 +33,6 @@ export default async function Image() {
           }}
         />
 
-        {/* Badge */}
         <div
           style={{
             display: "flex",
@@ -61,7 +59,6 @@ export default async function Image() {
           </span>
         </div>
 
-        {/* Headline */}
         <div
           style={{
             color: "white",
@@ -77,7 +74,6 @@ export default async function Image() {
           Sua conta de energia pode estar errada
         </div>
 
-        {/* Tagline */}
         <div
           style={{
             color: "rgba(255,255,255,0.55)",
@@ -90,7 +86,6 @@ export default async function Image() {
           17 verificações · Resultado em até 24h úteis
         </div>
 
-        {/* Brand pill */}
         <div
           style={{
             background: "#25D366",

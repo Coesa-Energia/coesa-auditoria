@@ -249,9 +249,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <head>
-        {/* Formulário embutido (aios.dev.br) */}
         <link rel="preconnect" href="https://aios.dev.br" />
-        {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
@@ -287,7 +285,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <body
         className={`${montserrat.variable} ${openSans.variable} font-sans antialiased`}
       >
-        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-5GVLL5SL"

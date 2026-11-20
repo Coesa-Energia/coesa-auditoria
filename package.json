@@ -6,11 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && node scripts/check-comments.mjs",
+    "test:comment-lint": "node --test scripts/check-comments.test.mjs",
     "hooks:install": "bash scripts/install-hooks.sh",
     "test:preflight-parity": "bash scripts/test-preflight-parity.sh",
     "preflight": "bash scripts/preflight.sh",
-    "preflight:ci": "npm run test:preflight-parity && npm run lint && tsc --noEmit"
+    "preflight:ci": "npm run test:preflight-parity && npm run test:comment-lint && npm run lint && tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -37,6 +38,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/parser": "^8.60.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.35",
     "postcss": "^8",

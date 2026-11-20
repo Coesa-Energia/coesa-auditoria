@@ -5,8 +5,6 @@ export const metadata: Metadata = {
   title: "Solicitação recebida — auditoria prioritária | COESA Energia",
   description:
     "Sua solicitação de auditoria gratuita de conta de energia foi recebida e entrou na fila prioritária. Um consultor COESA retorna em até 24 horas úteis.",
-  // Página de destino do formulário: não deve aparecer na busca nem competir
-  // com a landing pelo mesmo termo.
   robots: { index: false, follow: false },
 };
 

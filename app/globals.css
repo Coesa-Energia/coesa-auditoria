@@ -4,7 +4,6 @@
 
 @layer base {
   :root {
-    /* COESA Brand Colors */
     --coesa-green: 152 69% 31%;
     --coesa-green-dark: 152 69% 24%;
     --coesa-green-light: 152 55% 45%;
@@ -14,7 +13,6 @@
     --coesa-orange: 28 100% 50%;
     --coesa-yellow: 45 100% 51%;
 
-    /* Core palette */
     --background: 0 0% 100%;
     --foreground: 220 25% 10%;
 
@@ -61,13 +59,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.25); }
 
-/* Focus rings */
 *:focus-visible {
   outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;

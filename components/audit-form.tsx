@@ -17,7 +17,6 @@ export function AuditForm() {
     <section id="auditoria" className="py-20 lg:py-32 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left column — copy */}
           <div className="text-white">
             <p className="text-sm font-medium text-white/50 tracking-widest uppercase mb-4">
               Auditoria gratuita
@@ -45,7 +44,6 @@ export function AuditForm() {
             </div>
           </div>
 
-          {/* Right column — embedded form */}
           <div className="lg:sticky lg:top-24">
             <div className="bg-black text-white p-6 lg:p-8 border border-white/10 rounded-sm">
               <div className="mb-6">
@@ -60,7 +58,6 @@ export function AuditForm() {
                 </p>
               </div>
 
-              {/* Social proof mini */}
               <div className="flex items-center gap-3 mb-6 p-4 bg-white/5 rounded-sm border border-white/10">
                 <div className="flex -space-x-2">
                   {["M", "J", "A", "C"].map((l) => (
