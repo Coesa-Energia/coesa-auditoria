@@ -12,9 +12,6 @@ type LeadThanksProps = {
   nextSteps: string[];
 };
 
-// Páginas de destino do formulário. É o único lugar do site onde o WhatsApp
-// aparece — o lead já foi enviado, então o contato direto deixa de atropelar o
-// formulário.
 export function LeadThanks({
   eyebrow,
   title,

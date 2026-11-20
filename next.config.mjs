@@ -14,7 +14,6 @@ const nextConfig = {
           },
         ],
       },
-      // Prevent indexing of the Vercel default domain (duplicate content)
       {
         source: "/(.*)",
         has: [{ type: "host", value: "coesa-auditoria.vercel.app" }],

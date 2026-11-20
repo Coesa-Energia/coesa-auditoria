@@ -34,10 +34,8 @@ export function SocialProof() {
           </h2>
         </div>
 
-        {/* Featured case study */}
         <div className="max-w-3xl mx-auto mb-12">
           <div className="bg-white border border-border rounded-lg p-8 lg:p-12 shadow-sm">
-            {/* Solar badge */}
             <div className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-3 py-1.5 mb-6">
               <Sun className="w-3.5 h-3.5 text-yellow-500" />
               <span className="text-xs font-semibold text-yellow-700">Créditos solares não aplicados pela distribuidora</span>
@@ -100,7 +98,6 @@ export function SocialProof() {
           </p>
         </div>
 
-        {/* Testimonials */}
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
           {testimonials.map((t) => (
             <div key={t.name} className="bg-white border border-border rounded-lg p-6 shadow-sm">

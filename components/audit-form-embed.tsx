@@ -8,13 +8,6 @@ const FRAME_ID = "gf-embed-landing-auditoria-gratuita-conta-de-luz";
 const INITIAL_HEIGHT = 620;
 const HEIGHT_KEY = "__gfEmbedHeight";
 
-// O formulário anuncia a própria altura com um postMessage disparado assim que
-// o script dele é parseado — normalmente antes da hidratação do React. Um
-// listener registrado só no useEffect perde essa mensagem, e outra só vem se
-// algo mudar de tamanho lá dentro: o iframe fica preso nos 620px iniciais e o
-// conteúdo ganha scroll interno. Este script roda no parse, antes mesmo de o
-// iframe existir, aplica a altura direto no elemento e guarda o último valor
-// para o React seguir dali.
 const BOOTSTRAP = `(function(){
   if (window.${HEIGHT_KEY} !== undefined) return;
   window.${HEIGHT_KEY} = 0;
@@ -38,10 +31,6 @@ declare global {
 export function AuditFormEmbed() {
   const frameRef = useRef<HTMLIFrameElement>(null);
 
-  // A altura é escrita direto no elemento, não via prop de style: o script
-  // acima já pode tê-la ajustado antes da hidratação, e um style renderizado
-  // pelo React brigaria com esse valor (mismatch de hidratação e, dependendo
-  // da ordem, a altura errada de volta).
   useEffect(() => {
     const frame = frameRef.current;
     if (!frame) return;
@@ -65,7 +54,6 @@ export function AuditFormEmbed() {
   }, []);
 
   return (
-    // Radius lives on the wrapper — an iframe with border-radius leaves white corners.
     <div className="w-full overflow-hidden rounded-sm bg-white">
       <script dangerouslySetInnerHTML={{ __html: BOOTSTRAP }} />
       <iframe

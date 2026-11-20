@@ -70,21 +70,17 @@ export function BillDiagram() {
 
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
-            {/* Fatura estilizada */}
             <div className="relative">
               <div
                 className="relative bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden font-mono text-xs"
                 style={{ minHeight: "420px" }}
               >
-                {/* Header da fatura */}
                 <div className="bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
                   <span className="font-bold text-sm">DISTRIBUIDORA DE ENERGIA</span>
                   <span className="text-gray-400 text-xs">FATURA DE ENERGIA ELÉTRICA</span>
                 </div>
 
-                {/* Corpo da fatura */}
                 <div className="p-4 space-y-0">
-                  {/* Dados do cliente */}
                   <div className="border-b border-gray-100 pb-3 mb-3">
                     <div className="flex justify-between text-gray-500 text-xs mb-1">
                       <span>NOME DO CLIENTE</span>
@@ -96,7 +92,6 @@ export function BillDiagram() {
                     </div>
                   </div>
 
-                  {/* Linha 1: Bandeira tarifária — anotação 1 */}
                   <div className="flex justify-between py-2 border-b border-gray-50 relative">
                     <div className="flex items-center gap-2">
                       <span className="w-5 h-5 rounded-full bg-amber-500 text-white text-xs flex items-center justify-center font-bold flex-shrink-0">1</span>
@@ -105,7 +100,6 @@ export function BillDiagram() {
                     <span className="font-medium text-gray-800">R$ 28,48</span>
                   </div>
 
-                  {/* Linha 2: ICMS — anotação 2 */}
                   <div className="flex justify-between py-2 border-b border-gray-50">
                     <div className="flex items-center gap-2">
                       <span className="w-5 h-5 rounded-full bg-red-500 text-white text-xs flex items-center justify-center font-bold flex-shrink-0">2</span>
@@ -114,7 +108,6 @@ export function BillDiagram() {
                     <span className="font-medium text-gray-800">R$ 128,57</span>
                   </div>
 
-                  {/* Linha 3: Leitura */}
                   <div className="flex justify-between py-2 border-b border-gray-50">
                     <div className="flex items-center gap-2">
                       <span className="w-5 h-5 rounded-full bg-amber-500 text-white text-xs flex items-center justify-center font-bold flex-shrink-0">3</span>
@@ -123,7 +116,6 @@ export function BillDiagram() {
                     <span className="font-medium text-gray-800">R$ 215,70</span>
                   </div>
 
-                  {/* Linha 4: Créditos solar */}
                   <div className="flex justify-between py-2 border-b border-gray-50">
                     <div className="flex items-center gap-2">
                       <span className="w-5 h-5 rounded-full bg-red-500 text-white text-xs flex items-center justify-center font-bold flex-shrink-0">4</span>
@@ -132,7 +124,6 @@ export function BillDiagram() {
                     <span className="font-medium text-red-500">— R$ 0,00</span>
                   </div>
 
-                  {/* Linha 5: CIP */}
                   <div className="flex justify-between py-2 border-b border-gray-50">
                     <div className="flex items-center gap-2">
                       <span className="w-5 h-5 rounded-full bg-amber-500 text-white text-xs flex items-center justify-center font-bold flex-shrink-0">5</span>
@@ -141,7 +132,6 @@ export function BillDiagram() {
                     <span className="font-medium text-gray-800">R$ 47,90</span>
                   </div>
 
-                  {/* Total */}
                   <div className="flex justify-between pt-4 mt-2 border-t-2 border-gray-200">
                     <span className="font-bold text-gray-800 text-sm">TOTAL A PAGAR</span>
                     <span className="font-bold text-gray-800 text-sm">R$ 420,65</span>
@@ -154,7 +144,6 @@ export function BillDiagram() {
               </p>
             </div>
 
-            {/* Legenda das anotações */}
             <div className="space-y-4">
               {annotations.map((ann) => (
                 <div key={ann.id} className="flex items-start gap-4 p-4 bg-white border border-gray-100 rounded-lg shadow-sm">

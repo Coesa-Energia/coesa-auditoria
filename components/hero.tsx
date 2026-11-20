@@ -11,13 +11,10 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center bg-[#0a0a0a]">
-      {/* Subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0f1a0f] to-[#0a0a0a]" />
 
       <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20">
-        {/* Plain div — H1 visible immediately, no opacity:0 wrapper (LCP fix) */}
         <div className="max-w-4xl mx-auto">
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -28,7 +25,6 @@ export function Hero() {
             <span className="text-sm text-white/80">Auditoria 100% gratuita</span>
           </motion.div>
 
-          {/* H1 static — rendered immediately by server, no animation delay */}
           <h1
             className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight text-white font-medium tracking-tight"
             style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
@@ -75,7 +71,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         initial={{ opacity: 0 }}

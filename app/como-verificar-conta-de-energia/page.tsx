@@ -207,7 +207,6 @@ export default function ComoVerificarContaDeEnergia() {
 
         </div>
 
-        {/* CTA */}
         <div className="mt-12 p-8 bg-[#f8faf8] rounded-lg border border-border">
           <h3
             className="text-xl font-medium text-foreground mb-2"
