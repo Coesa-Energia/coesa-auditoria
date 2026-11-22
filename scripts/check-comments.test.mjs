@@ -19,6 +19,7 @@ test("comment lint accepts code and tool directives, then rejects real comments"
     write("valid.tsx", 'const url = "https://example.com"; export const el = <div />;\n');
     write("valid.css", 'a { content: "/* text */"; }\n');
     write("missing.ts", "export const missing = true;\n");
+    write(".gitignore", "build#cache\n\\#literal\n");
     execFileSync("git", ["add", "missing.ts"], { cwd });
     unlinkSync(join(cwd, "missing.ts"));
     assert.equal(check().status, 0);
@@ -26,9 +27,15 @@ test("comment lint accepts code and tool directives, then rejects real comments"
     write("invalid.tsx", "export const el = <div>{/* JSX */}</div>;\n");
     write("invalid.css", "a { color: red /* CSS */ !important; }\n");
     write("invalid.json", '{"url":"https://example.com"}\n// JSONC\n');
+    write("valid.sh", "#!/usr/bin/env bash\nprintf '%s\\n' '# literal'\n");
+    write("valid.yml", 'url: "https://example.com/#anchor"\n');
+    write("invalid.sh", "echo ready # shell comment\n");
+    write("invalid.yml", "run: echo ready # yaml comment\n");
+    write("invalid-shebang.yml", "#! yaml comment\nname: CI\n");
+    write(".gitignore", "# section heading\n");
     const result = check();
     assert.equal(result.status, 1);
-    for (const file of ["invalid.tsx", "invalid.css", "invalid.json"]) {
+    for (const file of ["invalid.tsx", "invalid.css", "invalid.json", "invalid.sh", "invalid.yml", "invalid-shebang.yml", ".gitignore"]) {
       assert.match(result.stderr, new RegExp(`${file.replace(".", "\\.")}:`));
     }
   } finally {

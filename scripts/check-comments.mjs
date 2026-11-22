@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import parser from "@typescript-eslint/parser";
 import ts from "typescript";
 
-const sourceExtensions = new Set(["ts", "tsx", "js", "jsx", "mjs", "cjs", "css", "json"]);
+const sourceExtensions = new Set(["ts", "tsx", "js", "jsx", "mjs", "cjs", "css", "json", "sh", "yml", "yaml"]);
 const files = execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard", "-z"])
   .toString()
   .split("\0")
@@ -12,7 +12,8 @@ const failures = [];
 
 for (const file of files) {
   const extension = file.split(".").pop();
-  if (!sourceExtensions.has(extension) || !existsSync(file)) continue;
+  if (!sourceExtensions.has(extension) && file !== ".gitignore" && file !== ".githooks/pre-push") continue;
+  if (!existsSync(file)) continue;
   const source = readFileSync(file, "utf8");
   const positions = [];
 
@@ -49,6 +50,21 @@ for (const file of files) {
         index++;
       }
     }
+  } else {
+    let offset = 0;
+    for (const [lineNumber, line] of source.split("\n").entries()) {
+      let quote = "";
+      for (let index = 0; index < line.length; index++) {
+        if (line[index] === "\\" && quote !== "'") { index++; continue; }
+        if (quote) { if (line[index] === quote) quote = ""; continue; }
+        if (line[index] === "'" || line[index] === '"') { quote = line[index]; continue; }
+        if (line[index] === "#" && (index === 0 || (file !== ".gitignore" && /\s/.test(line[index - 1])))) {
+          if (!(lineNumber === 0 && index === 0 && line.startsWith("#!") && (extension === "sh" || file === ".githooks/pre-push"))) positions.push(offset + index);
+          break;
+        }
+      }
+      offset += line.length + 1;
+    }
   }
 
   for (const position of positions) {
@@ -57,6 +73,6 @@ for (const file of files) {
 }
 
 if (failures.length) {
-  console.error(`Comments are forbidden in TS, JS, CSS and JSON source:\n${failures.join("\n")}`);
+  console.error(`Comments are forbidden in source and configuration:\n${failures.join("\n")}`);
   process.exitCode = 1;
 }
